@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 	"io"
 	"net/http"
-	"github.com/google/uuid"
 )
 
 type AlbumResponse struct {
@@ -62,7 +62,7 @@ func postAlbums(c *gin.Context) {
 	// Generate a unique album key
 	albumKey := generateUniqueAlbumKey()
 
-	//// Create an AlbumInfo object (you can customize this based on your data)
+	// Create an AlbumInfo object
 	//albumInfo := albumInfo{
 	//	Artist: albumInfo .Artist,
 	//	Title:  albumInfo .Title,
