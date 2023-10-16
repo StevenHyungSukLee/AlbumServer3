@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/google/uuid"
 	"io"
 	"net/http"
 )
@@ -18,9 +17,9 @@ type imageMetaData struct {
 }
 
 type albumInfo struct {
-	Artist string `json:"artist"`
-	Title string `json:"title"`
-	Year string `json:"year"`
+	Artist string `json:"artist:"`
+	Title string `json:"title:"`
+	Year string `json:"year:"`
 }
 
 type errorMsg struct {
@@ -29,7 +28,7 @@ type errorMsg struct {
 var albumData = make(map[string]albumInfo)
 
 func generateUniqueAlbumKey() string {
-	return uuid.New().String()
+	return "123"
 }
 
 func main() {
@@ -62,12 +61,6 @@ func postAlbums(c *gin.Context) {
 	// Generate a unique album key
 	albumKey := generateUniqueAlbumKey()
 
-	// Create an AlbumInfo object
-	//albumInfo := albumInfo{
-	//	Artist: albumInfo .Artist,
-	//	Title:  albumInfo .Title,
-	//	Year:   albumInfo .Year,
-	//}
 
 	// Store the album data by album key
 	albumData[albumKey] = albumInfo
