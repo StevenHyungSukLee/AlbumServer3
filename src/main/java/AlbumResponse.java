@@ -1,24 +1,24 @@
 import com.google.gson.Gson;
 
 public class AlbumResponse {
-  private String albumKey;
+  private String albumId;
   private long imageSizeBytes;
 
   public AlbumResponse() {
     // Default constructor
   }
 
-  public AlbumResponse(String albumKey, long imageSizeBytes) {
-    this.albumKey = albumKey;
+  public AlbumResponse(String albumId, long imageSizeBytes) {
+    this.albumId = albumId;
     this.imageSizeBytes = imageSizeBytes;
   }
 
   public String getAlbumKey() {
-    return albumKey;
+    return albumId;
   }
 
   public void setAlbumKey(String albumKey) {
-    this.albumKey = albumKey;
+    this.albumId = albumKey;
   }
 
   public long getImageSizeBytes() {
