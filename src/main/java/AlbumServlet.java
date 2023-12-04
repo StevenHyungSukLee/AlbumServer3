@@ -75,6 +75,7 @@ public class AlbumServlet extends HttpServlet {
       response.getWriter().write(albumResponse.toJson());
 
     } catch (Exception ex) {
+      response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
       ex.printStackTrace();
       response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
     }
